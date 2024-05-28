@@ -9,9 +9,9 @@ class TestLogin:
     # Проверяем вход по кнопке «Войти в аккаунт» на главной
     # Нельзя просто так взять и войти с новым аккаунтом, сначала нужно зарегистрироваться
     def test_login_from_main_page(self, driver, test_email, test_password):
-        # Переход на страницу регистрации
+        # Переходим на страницу регистрации
         driver.get(TestLinks.registration_page_link)
-        # Регистрация
+        # Регистрация, попадаем на страничку логина
         AuthHelper.authenticate(driver, test_email, test_password, is_registration=True)
         # Переход на главную страницу
         driver.get(TestLinks.main_page_link)
@@ -28,9 +28,9 @@ class TestLogin:
 
     # Проверяем вход через кнопку «Личный кабинет»
     def test_login_from_personal_account_button(self, driver, test_email, test_password):
-        # Переход на страницу регистрации
+        # Переходим на страницу регистрации
         driver.get(TestLinks.registration_page_link)
-        # Регистрация
+        # Регистрация, попадаем на страничку логина
         AuthHelper.authenticate(driver, test_email, test_password, is_registration=True)
 
         # Переход на главную страницу
@@ -47,7 +47,7 @@ class TestLogin:
 
     # Проверяем вход через кнопку в форме регистрации
     def test_login_from_registration_link(self, driver, test_email, test_password):
-        # Переход на страницу регистрации
+        # Переходим на страницу регистрации
         driver.get(TestLinks.registration_page_link)
         # Регистрация, попадаем на страничку логина
         AuthHelper.authenticate(driver, test_email, test_password, is_registration=True)
@@ -65,7 +65,7 @@ class TestLogin:
 
     # Проверяем вход через кнопку в форме восстановления пароля
     def test_login_from_forgot_password_link(self, driver, test_email, test_password):
-        # Переход на страницу регистрации
+        # Переходим на страницу регистрации
         driver.get(TestLinks.registration_page_link)
         # Регистрация, попадаем на страничку логина
         AuthHelper.authenticate(driver, test_email, test_password, is_registration=True)
