@@ -29,10 +29,15 @@ class TestLocators:
     # логотип Stellar Burgers в header
     LOGO_LOCATOR = (By.XPATH, "//*[contains(@class, 'AppHeader_header__logo')]")
 
-    # Локаторы для элементов конструктора
+    # Локаторы для вкладок конструктора
     CONSTRUCTOR_TAB_BUN_LOCATOR = (By.XPATH, "*//span[contains(text(), 'Булки')]")
     CONSTRUCTOR_TAB_SAUCE_LOCATOR = (By.XPATH, "*//span[contains(text(), 'Соусы')]")
     CONSTRUCTOR_TAB_FILLING_LOCATOR = (By.XPATH, "*//span[contains(text(), 'Начинки')]")
+
+    # Локаторы для позиций в списке меню
+    BUNS_SECTION_LOCATOR = (By.XPATH, "//h2[text()='Булки']")
+    SAUCES_SECTION_LOCATOR = (By.XPATH, "//h2[text()='Соусы']")
+    FILLINGS_SECTION_LOCATOR = (By.XPATH, "//h2[text()='Начинки']")
 
     # Локатор ошибки неправильного логина при регистрации
     ERROR_MESSAGE_LOCATOR = (By.CSS_SELECTOR, ".input__error.text_type_main-default")
