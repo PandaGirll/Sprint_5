@@ -1,7 +1,8 @@
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from locators import TestLocators
+from selenium.webdriver.support.ui import WebDriverWait
+
 from data import TestLinks
+from locators import TestLocators
 
 
 # Содаём класс для проверки переходов к разделам конструктора
@@ -47,7 +48,7 @@ class TestNavigationInConstructor:
         # Проверка, что раздел «Начинки» виден в области просмотра
         assert fillings_section.is_displayed(), "Ошибка отображения раздела «Начинки»."
 
-# Альтернативный вариант проверки навигации по клику на вкладки, булки в конце, чтобы были кликабельны
+    # Альтернативный вариант проверки навигации по клику на вкладки, булки в конце, чтобы были кликабельны
 
     def test_navigation_to_sauces_section(self, driver, test_email, test_password):
         # Переход на главную страницу

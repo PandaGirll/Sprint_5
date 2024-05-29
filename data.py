@@ -1,8 +1,9 @@
-from locators import TestLocators
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from generator import Generator
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from generator import Generator
+from locators import TestLocators
 
 
 # Ссылки на страницы

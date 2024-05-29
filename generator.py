@@ -22,4 +22,3 @@ class Generator:
     def generate_password(length=6):
         test_pass = ''.join(random.choices(string.ascii_letters + string.digits, k=length))
         return test_pass
-
