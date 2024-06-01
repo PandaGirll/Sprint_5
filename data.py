@@ -8,11 +8,13 @@ from locators import TestLocators
 
 # Ссылки на страницы
 class TestLinks:
-    main_page_link = "https://stellarburgers.nomoreparties.site/"
-    login_page_link = "https://stellarburgers.nomoreparties.site/login"
-    registration_page_link = "https://stellarburgers.nomoreparties.site/register"
-    forgot_password_page_link = "https://stellarburgers.nomoreparties.site/forgot-password"
-    personal_account_page_link = "https://stellarburgers.nomoreparties.site/account/profile"
+    testing_url = "https://stellarburgers.nomoreparties.site"  # Адрес тестируемого сервера
+
+    main_page_link = testing_url + "/"
+    login_page_link = testing_url + "/login"
+    registration_page_link = testing_url + "/register"
+    forgot_password_page_link = testing_url + "/forgot-password"
+    personal_account_page_link = testing_url + "/account/profile"
 
 
 # Универсальная функция для регистрации и авторизации
