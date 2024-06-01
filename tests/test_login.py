@@ -22,7 +22,6 @@ class TestLogin:
         AuthHelper.login(driver, test_mail, test_pass)
         # Дожидаемся загрузки главной страницы
         WebDriverWait(driver, 10).until(EC.url_to_be(TestLinks.main_page_link))
-
         # Проверяем на соответствие текущий URL и ожидаемый результат
         assert driver.current_url == TestLinks.main_page_link, (
             "Ошибка перехода на главную страницу после логина."
@@ -66,8 +65,6 @@ class TestLogin:
     # Проверяем вход через кнопку в форме восстановления пароля
     def test_login_from_forgot_password_link(self, driver, registered_user):
         test_mail, test_pass = registered_user
-        # Переходим на страницу логина
-        driver.get(TestLinks.login_page_link)
         # На странице логина нажимаем на ссылку "Восстановить пароль"
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(
@@ -76,12 +73,10 @@ class TestLogin:
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(
                 TestLocators.LOGIN_LINK_LOCATOR)).click()
-
         # Логин
         AuthHelper.login(driver, test_mail, test_pass)
         # Дожидаемся загрузки главной страницы
         WebDriverWait(driver, 10).until(EC.url_to_be(TestLinks.main_page_link))
-
         # Проверяем на соответствие текущий URL и ожидаемый результат
         assert driver.current_url == TestLinks.main_page_link, (
             "Ошибка перехода на главную страницу после логина."

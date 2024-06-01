@@ -18,7 +18,7 @@ class TestLinks:
 
 
 # Универсальная функция для регистрации и авторизации
-class AuthHelper:
+class AuthHelper2:
     @staticmethod
     def authenticate(driver, email, password, is_registration=False):
         while True:

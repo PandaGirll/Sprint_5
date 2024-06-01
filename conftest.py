@@ -38,3 +38,13 @@ def registered_user(driver, test_email, test_password):
     # Подтверждаем успешную регистрацию
     AuthHelper.confirm_registration_success(driver)
     return test_email, test_password
+
+
+@pytest.fixture
+# фикстура для предварительной авторизации
+def authorized_user(driver, registered_user):
+    test_mail, test_pass = registered_user
+    # Логин с зарегистрированными данными, попадаем на главную страницу
+    AuthHelper.login(driver, test_mail, test_pass)
+    # Подтверждаем успешный логин
+    AuthHelper.confirm_login_success(driver)
