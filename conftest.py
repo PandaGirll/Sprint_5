@@ -1,5 +1,8 @@
 import pytest
 from selenium import webdriver
+
+from auth_helper import AuthHelper
+from data import TestLinks
 from generator import Generator
 
 
@@ -23,3 +26,15 @@ def test_email():
 @pytest.fixture
 def test_password():
     return Generator.generate_password()
+
+
+@pytest.fixture
+# фикстура для предварительной регистрации
+def registered_user(driver, test_email, test_password):
+    # Переход на страницу регистрации
+    driver.get(TestLinks.registration_page_link)
+    # Регистрация пользователя
+    AuthHelper.registration(driver, test_email, test_password)
+    # Подтверждаем успешную регистрацию
+    AuthHelper.confirm_registration_success(driver)
+    return test_email, test_password
